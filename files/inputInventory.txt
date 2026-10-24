@@ -1,2 +1,2 @@
-Product:Manzana;Wholesaler Price:10.00;Stock:10;
-Product:Fresa;Wholesaler Price:5.00;Stock:20;
+Name:Frambuesa;Price:1.0;Stock:10
+Name:Fresa;Price:1.0;Stock:1

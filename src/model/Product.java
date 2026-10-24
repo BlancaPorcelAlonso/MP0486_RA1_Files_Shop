@@ -14,7 +14,7 @@ public class Product {
 	public Product(String name, Amount wholesalerPrice, boolean available, int stock) {
 		super();
 		this.id = totalProducts+1;
-		this.name = name;
+		setName(name);
 		this.wholesalerPrice = wholesalerPrice;
 		this.publicPrice = new Amount(wholesalerPrice.getValue() * 2);
 		this.available = available;
@@ -35,9 +35,20 @@ public class Product {
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.name = capitalize(name);
 	}
-
+	
+	/**
+	 * capitalize first letter, rest lowercase
+	 * e.g. "MANZANA" -> "Manzana", "manzana" -> "Manzana"
+	 */
+	private String capitalize(String text) {
+		if (text == null || text.isEmpty()) {
+			return text;
+		}
+		String lower = text.toLowerCase();
+		return Character.toUpperCase(lower.charAt(0)) + lower.substring(1);
+	}
 	
 
 	public Amount getPublicPrice() {

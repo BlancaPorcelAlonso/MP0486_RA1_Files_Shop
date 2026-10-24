@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.EventQueue;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,6 +17,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
+import dao.Dao; 
+import dao.DaoImplJDBC;
+
 public class LoginView extends JFrame implements ActionListener{
 
 	private static final long serialVersionUID = 1L;
@@ -29,6 +33,13 @@ public class LoginView extends JFrame implements ActionListener{
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		// TEMPORARY: insert a test employee (Blanca / test) so we can log in
+				Dao dao = new DaoImplJDBC();
+				//dao.connect();
+				//Employee testEmployee = new Employee(1, "Blanca", "test");
+				//dao.insertEmployee(testEmployee);
+				//dao.disconnect();
+				
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
